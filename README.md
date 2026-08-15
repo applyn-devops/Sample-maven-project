@@ -1,4 +1,4 @@
-# sample-maven-app
+# sample-maven-app-demo
 
 [![Maven CI](https://github.com/your-username/sample-maven-app/actions/workflows/maven.yml/badge.svg)](https://github.com/your-username/sample-maven-app/actions/workflows/maven.yml)
 
