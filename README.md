@@ -1,5 +1,5 @@
 # sample-maven-app-demo
-# This is for webhook trigger demo
+# This is for webhook trigger demo.
 
 [![Maven CI](https://github.com/your-username/sample-maven-app/actions/workflows/maven.yml/badge.svg)](https://github.com/your-username/sample-maven-app/actions/workflows/maven.yml)
 
