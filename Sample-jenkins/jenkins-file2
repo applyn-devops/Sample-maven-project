@@ -1,7 +1,16 @@
 pipeline {
-    agent any
+    agent {
+       label 'vamshi-label'
+       }
 
     stages {
+
+        stage ('checkout') {
+           steps {
+             git branch: 'krishna', changelog: false, poll: false, url: 'https://github.com/applyn-devops/Sample-maven-project.git'
+           }
+        }
+ 
         stage('validate') {
             steps {
                 sh 'mvn validate'
@@ -27,3 +36,4 @@ pipeline {
         }
     }
 }
+
