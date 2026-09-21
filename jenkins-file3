@@ -14,7 +14,7 @@ pipeline {
             description: 'Select application version'
          )
 
-         booleanparam(
+         booleanParam(
              name: 'RUN_COMPILE',
              defaultvalue: true,
              description: 'Run compile for Build'
