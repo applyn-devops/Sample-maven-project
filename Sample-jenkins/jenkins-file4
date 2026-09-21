@@ -28,7 +28,6 @@ pipeline {
 
     password(
         name: 'DB_PASSWORD',
-        defaultValueAsSecret: 'krishna',
         description: 'Database password'
     )
 
