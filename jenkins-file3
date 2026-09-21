@@ -10,13 +10,13 @@ pipeline {
 
          string(
             name: 'Version',
-            defaultvalue: '1.0',
+            defaultValue: '1.0',
             description: 'Select application version'
          )
 
          booleanParam(
              name: 'RUN_COMPILE',
-             defaultvalue: true,
+             defaultValue: true,
              description: 'Run compile for Build'
          )
      } 
