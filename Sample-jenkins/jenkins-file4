@@ -1,42 +1,42 @@
 pipeline {
     agent any
+       parameters {
 
-     parameters {
-         choice(
-             name: 'Select Environment',
-             choices: ['Dev', 'QA', 'Prod'],
-             description: 'select deployment environment'
-         )
+    choice(
+        name: 'Select Environment',
+        choices: ['Dev', 'QA', 'prod'],
+        description: 'select deployment environment'
+    )
 
-         string(
-            name: 'Version',
-            defaultValue: '1.0',
-            description: 'Select application version'
-         )
+    string(
+        name: 'Version',
+        defaultValue: '1.0',
+        description: 'Select application version'
+    )
 
-         booleanParam(
-             name: 'RUN_COMPILE',
-             defaultValue: true,
-             description: 'Run compile for Build'
-         )
+    booleanParam(
+        name: 'RUN_COMPILE',
+        defaultValue: true,
+        description: 'Run compile for Build'
+    )
 
-	 text(
-             name: 'RELEASE_NOTES',
-             defaultVaule: '-Fix bug\n- Upadate dependency',
-             description: 'Enter release notes'
-        )
+    text(
+        name: 'RELEASE_NOTES',
+        defaultValue: 'Fix bug\n- Update dependency',
+        description: 'Enter release notes'
+    )
 
-        password(
-             name: 'DB_PASSWORD',
-             defaultVauleAsSecret:'.....',
-             description: 'Database password'
-        )
+    password(
+        name: 'DB_PASSWORD',
+        defaultValueAsSecret: '.....',
+        description: 'Database password'
+    )
 
-        file(
-             name:'CONFIG_FILE',
-             description:'upload config file'
-        )
-     }
+    file(
+        name: 'CONFIG_FILE',
+        description: 'Upload config file'
+    )
+}
 
     stages {
 
