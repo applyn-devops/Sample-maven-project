@@ -3,19 +3,19 @@ pipeline {
 
      parameters {
          choice(
-             name: ‘Select Environment’,
-             choices: [‘Dev’, ‘QA’, ‘Prod’],
-             description: ‘select deployment environment’
+             name: 'Select Environment',
+             choices: ['Dev', 'QA', 'Prod'],
+             description: 'select deployment environment'
          )
 
          string(
-            name: ‘Version’,
-            defaultvalue: ‘1.0’,
-            description: ’Select application version’
+            name: 'Version',
+            defaultvalue: '1.0',
+            description: 'Select application version'
          )
 
          booleanparam(
-             name: ‘RUN_COMPILE’,
+             name: 'RUN_COMPILE',
              defaultvalue: true,
              description: ‘Run compile for Build’
          )
