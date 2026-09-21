@@ -20,7 +20,7 @@ pipeline {
              description: 'Run compile for Build'
          )
 
-	 multi-linestring(
+	 text(
              name: 'RELEASE_NOTES',
              defaultVaule: '-Fix bug\n- Upadate dependency',
              description: 'Enter release notes'
@@ -28,7 +28,7 @@ pipeline {
 
         password(
              name: 'DB_PASSWORD',
-             defaultVaule:'.....',
+             defaultVauleAsSecret:'.....',
              description: 'Database password'
         )
 
