@@ -1,0 +1,38 @@
+pipeline {
+    agent {
+       label 'kishore-label'
+       }
+
+    stages {
+
+        stage ('checkout') {
+           steps {
+             git branch: 'kishore', changelog: false, poll: false, url: 'https://github.com/applyn-devops/Sample-maven-project.git'
+           }
+        }
+ 
+        stage('validate') {
+            steps {
+                sh 'mvn validate'
+            }
+        }
+
+        stage('compile') {
+            steps {
+                sh 'mvn compile'
+            }
+        }
+
+        stage('test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+
+        stage('install') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
+    }
+}
