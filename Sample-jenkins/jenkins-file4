@@ -1,0 +1,73 @@
+pipeline {
+    agent any
+
+     parameters {
+         choice(
+             name: 'Select Environment',
+             choices: ['Dev', 'QA', 'Prod'],
+             description: 'select deployment environment'
+         )
+
+         string(
+            name: 'Version',
+            defaultValue: '1.0',
+            description: 'Select application version'
+         )
+
+         booleanParam(
+             name: 'RUN_COMPILE',
+             defaultValue: true,
+             description: 'Run compile for Build'
+         )
+
+	 multi-linestring(
+             name: 'RELEASE_NOTES',
+             defaultVaule: '-Fix bug\n- Upadate dependency',
+             description: 'Enter release notes'
+        )
+
+        password(
+             name: 'DB_PASSWORD',
+             defaultVaule:'krishna',
+             description: 'Database password'
+        )
+
+        file(
+             name:'CONFIG_FILE',
+             description:'upload config file'
+        )
+     }
+
+    stages {
+
+        stage ('checkout') {
+           steps {
+             git branch: 'krishna', changelog: false, poll: false, url: 'https://github.com/applyn-devops/Sample-maven-project.git'
+           }
+        }
+
+        stage('validate') {
+            steps {
+                sh 'mvn validate'
+            }
+        }
+
+        stage('compile') {
+            steps {
+                sh 'mvn compile'
+            }
+        }
+
+        stage('test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+
+        stage('install') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
+    }
+}
