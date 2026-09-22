@@ -8,48 +8,4 @@ pipeline {
              description: 'select deployment environment'
          )
 
-         string(
-            name: 'Version',
-            defaultValue: '1.0',
-            description: 'Select application version'
-         )
-
-         booleanParam(
-             name: 'RUN_COMPILE',
-             defaultValue: true,
-             description: 'Run compile for Build'
-         )
-     }
-    stages {
-
-        stage ('checkout') {
-           steps {
-             git branch: 'kishore', changelog: false, poll: false, url: 'https://github.com/jashwanth-applyn/Sample-maven-project.git'
-           }
-        }
-
-        stage('validate') {
-            steps {
-                sh 'mvn validate'
-            }
-        }
-
-        stage('compile') {
-            steps {
-                sh 'mvn compile'
-            }
-        }
-
-        stage('test') {
-            steps {
-                sh 'mvn test'
-            }
-        }
-
-        stage('install') {
-            steps {
-                sh 'mvn clean install'
-            }
-        }
     }
-}
