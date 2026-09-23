@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 # sample-maven-app-demo
 Jenkins files
+=======
+..# sample-maven-app-demo...
+example for webhook
+Jenkins file
+>>>>>>> 2bcd3329176cc66f7b53cc3933d0d42d9fafaf5f
 [![Maven CI](https://github.com/your-username/sample-maven-app/actions/workflows/maven.yml/badge.svg)](https://github.com/your-username/sample-maven-app/actions/workflows/maven.yml)
 
 A sample Java 17 Maven project that demonstrates a minimal application, JUnit 5 tests, and a GitHub Actions CI pipeline.
