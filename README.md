@@ -1,5 +1,5 @@
 # sample-maven-app-demo .........
-this is an example for the webhook file foe webhook
+this is an example for the webhook file foe webhookss
 `and this is for webhook purpose
 [![Maven CI](https://github.com/your-username/sample-maven-app/actions/workflows/maven.yml/badge.svg)](https://github.com/your-username/sample-maven-app/actions/workflows/maven.yml)
 
